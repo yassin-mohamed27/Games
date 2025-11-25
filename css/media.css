@@ -1,0 +1,38 @@
+@media (max-width: 767px) {
+    .hero {
+        height: 120px
+    }
+
+    .nav-pill {
+        padding: .45rem .7rem;
+        max-width: 96%;
+        gap: .5rem
+    }
+
+    .brand-title {
+        font-size: .95rem
+    }
+
+    .nav-links a {
+        padding: .28rem .45rem;
+        font-size: .78rem
+    }
+    .game-modal-dialog {
+        flex-direction: column;
+    }
+
+    .game-modal-left {
+        flex: 0 0 auto;
+        padding: .75rem;
+    }
+
+    .game-modal-left img {
+        height: 180px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .game-modal-right {
+        padding: 1rem;
+    }
+}
