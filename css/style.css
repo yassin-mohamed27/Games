@@ -88,7 +88,8 @@ img {
 }
 
 .brand-title {
-  font-family: "Nerko One", cursive;
+   font-family: "Science Gothic", sans-serif;
+  font-weight: 400;
   font-size: 1.08rem;
   color: #fff;
   letter-spacing: 0.02em;
@@ -210,7 +211,8 @@ img {
   font-weight: 600;
   margin: 0;
   color: white;
-  font-family: "Nerko One", cursive;
+  font-family: "Science Gothic", sans-serif;
+  font-weight: 400;
   font-weight: 500;
   font-size: 14px;
 }
@@ -355,7 +357,8 @@ img {
 }
 
 .left-title {
-  font-family: "Nerko One", cursive;
+   font-family: "Science Gothic", sans-serif;
+  font-weight: 400;
   font-size: 1.6rem;
   color: #fff;
   margin: 0 0 0.9rem 0;
@@ -418,14 +421,16 @@ img {
 }
 
 .modal-title-main {
-  font-family: "Nerko One", cursive;
+   font-family: "Science Gothic", sans-serif;
+  font-weight: 400;
   font-size: 1.8rem;
   color: #fff;
   margin: 0;
 }
 
 .game-modal-title {
-  font-family: "Nerko One", cursive;
+  font-family: "Science Gothic", sans-serif;
+  font-weight: 400;
   font-size: 1.9rem;
   margin: 0 0 0.5rem;
   font-weight: 700;
