@@ -25,25 +25,39 @@ function initStickyNav() {
     observer.observe(sentinel);
 }
 
-function getData() {
-    const targetUrl = 'https://www.freetogame.com/api/games?category=shooter';
-    const proxy = 'https://api.allorigins.win/raw?url=';
 
-    fetch(proxy + encodeURIComponent(targetUrl))
-        .then(res => {
-            if (!res.ok) throw new Error('Status: ' + res.status);
-            return res.json();
-        })
-        .then(data => {
-            allRecipes = data;
-            console.log(allRecipes);
-            displayData();
-        })
-        .catch(err => {
-            console.error('Fetch error:', err);
-            const row = document.querySelector('.row');
-            if (row) row.innerHTML = `<p class="text-danger" ${err.message}</p>`;
-        });
+
+async function getData() {
+    const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
+
+    const options = {
+        method: 'GET',
+        headers: {
+            'x-rapidapi-key': 'a11affe668mshfdd32bdff4206e5p11a57bjsn45f709233a22',
+            'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+
+        if (!response.ok) {
+            throw new Error('Status: ' + response.status);
+        }
+
+        const data = await response.json();
+
+       
+        allRecipes = data;
+
+        console.log(allRecipes);
+        displayData();
+
+    } catch (error) {
+        console.error('Fetch error:', error);
+        const row = document.querySelector('.row');
+        if (row) row.innerHTML = `<p class="text-danger">API Error</p>`;
+    }
 }
 
 function displayData() {
@@ -120,10 +134,10 @@ function setupNavFilters() {
     const normalize = (str) => (str || '').toLowerCase().trim();
 
     const customCategories = {
-        sailing: [0, 1, 2, 3, 4],         
-        permadeath: [5, 6, 7, 8, 9],     
-        superhero: [10, 11, 12, 13, 14], 
-        pixel: [15, 16, 17, 18, 19]      
+        sailing: [0, 1, 2, 3, 4],
+        permadeath: [5, 6, 7, 8, 9],
+        superhero: [10, 11, 12, 13, 14],
+        pixel: [15, 16, 17, 18, 19]
     };
 
     links.forEach(a => {
